@@ -15,5 +15,5 @@
 - 字符串格式化首选 f-string：`f"{name} = {value}"`。
 
 ## 4. 今日练习
-- `celsius_to_fahrenheit`：体会浮点除法与 f-string。
-- `fizzbuzz`：体会取模与多分支，对比你熟悉的 C/JS 写法。
+- `celsius_to_fahrenheit`：体会浮点除法（`/` 与 `//` 的区别）。
+- `fizzbuzz`：体会取模、多分支，以及用 f-string/`str()` 返回数字字符串，对比你熟悉的 C/JS 写法。
