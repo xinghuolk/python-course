@@ -9,5 +9,8 @@ dependencies = []
 dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11", "jupyter>=1.0"]
 
 [tool.pytest.ini_options]
+# 批改以"每天"为单位：cd 进入 lessons/dayNN-*/ 后再运行 pytest。
+# importlib 导入模式避免污染 sys.path，规避跨天 exercises/ 包名冲突。
 testpaths = ["lessons"]
-python_files = ["test_*.py", "*_test.py"]
+python_files = ["test_*.py"]
+addopts = "--import-mode=importlib"
