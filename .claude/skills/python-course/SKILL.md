@@ -12,9 +12,9 @@ description: 个性化中文 Python 自学课程引擎。当用户说"出今日�
 ## 工作流 1：出今日课
 1. 从 `progress.md` 读"下一课"，从 `curriculum.md` 读该主题。
 2. 在 `lessons/dayNN-<主题>/` 下生成：
-   - `lesson.ipynb`：中文讲解 + 可运行代码单元，按"概念→对比 C/JS→示例"组织，约占 ⅓ 时长。
+   - `lesson.ipynb`：中文讲解 + 可运行代码单元，按"概念→对比 C/JS→示例"组织，**覆盖 5–8 个概念点**，约占 ⅓ 时长。
    - `notes.md`：与 ipynb 同内容的干净中文讲稿（无代码输出杂质），供上传 NotebookLM。
-   - `exercises/`：2–4 个 `.py` 起手文件，函数签名 + docstring + `# TODO`，约占 ⅔ 时长。
+   - `exercises/`：**5–7 个** `.py` 起手文件，难度递增，函数签名 + docstring + `# TODO`，合计约占 ⅔ 时长（≈ 1 小时动手）。
    - `tests/`：每个练习对应 `test_*.py`（pytest），覆盖正常 + 边界。
    - `solutions/`：参考答案，单独存放。
    - `conftest.py`：固定内容，把当天目录加入 sys.path，使 `from exercises.xxx import ...` 可用：
