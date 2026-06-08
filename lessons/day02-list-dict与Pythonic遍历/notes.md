@@ -48,9 +48,9 @@
 2. `normalize_names`：字符串清洗 + 过滤空值。
 3. `word_frequencies`：dict 计数。
 4. `merge_scores`：`zip` + dict。
-5. `top_students`：处理 `list[dict]`。
+5. `top_students`：处理 `list[dict]`，按分数降序排序。
 6. `unique_preserve_order`：set 辅助实现保序去重。
-7. `summarize_orders`：小综合，按客户汇总订单数量和金额。
+7. `summarize_orders`：小综合，按客户汇总有效订单数量和金额。
 
 完成后进入本目录运行：
 

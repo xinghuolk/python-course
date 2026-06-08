@@ -5,7 +5,7 @@ def summarize_orders(orders: list[dict[str, object]]) -> dict[str, object]:
 
     返回：
     {
-        "count": 订单总数,
+        "count": 有效订单数,
         "total": 总金额,
         "by_customer": {"alice": 12.5, ...}
     }

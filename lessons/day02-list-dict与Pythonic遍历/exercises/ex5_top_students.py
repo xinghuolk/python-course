@@ -5,8 +5,9 @@ def top_students(records: list[dict[str, object]], threshold: int) -> list[str]:
 
     要求：
     - 返回名字列表；
-    - 保持原 records 顺序；
+    - 按 score 从高到低排序；
     - 缺少 name 或 score 的记录忽略。
+    - score 可以是 int 或 float。
     """
-    # TODO: 遍历 list[dict] 并过滤
+    # TODO: 遍历 list[dict]，过滤后用 sorted(key=...) 排序
     raise NotImplementedError
