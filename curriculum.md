@@ -6,7 +6,7 @@
 - **P0 环境与运行**：uv、虚拟环境、REPL、脚本、Notebook、pytest 基本运行。
 - **P1 基础语法与字符串**：对象模型、标量类型、运算、f-string、切片、真值、控制流。
 - **P2 list/dict 与 Pythonic 遍历**：list/dict 主线，tuple/set 作为工具，`enumerate`、`zip`、`.items()`、推导式。
-- **P3 函数、类型注解与模块**：函数设计、返回值、默认参数陷阱、`*args/**kwargs`、模块拆分、导入。
+- **P3 函数进阶**：函数设计、默认参数陷阱、`*args`/`**kwargs`、闭包、装饰器（functools.wraps）、类型注解、模块拆分
 - **P4 文件、路径、JSON/CSV 与异常**：`pathlib`、文件读写、上下文管理器、JSON/CSV、异常处理、logging 入门。
 - **P5 小型 CLI 自动化脚本**：argparse、批处理、目录扫描、输入输出、可测试脚本结构。
 - **P6 数据结构进阶与数据建模**：排序、`collections`、dataclass、简单 class、对象属性；OOP 以实用建模为主。

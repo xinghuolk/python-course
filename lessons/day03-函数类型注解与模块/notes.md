@@ -43,7 +43,21 @@
 - 练习里的 `tests/` 通过 `from exercises.xxx import func` 导入你的函数。
 - 一个模块可以暴露多个小函数。主函数调用 helper 函数，是组织代码的第一步。
 
-## 8. 今日练习（7 题，难度递增）
+## 8. 闭包（Closure）
+- 函数里**定义并返回另一个函数**，内层函数记住外层的变量——这就是闭包。
+- Python 按**引用**捕获外层变量，不是拷贝，而且是**延迟绑定**（用的时候才取值）。
+  - 经典坑：`funcs = [lambda: i for i in range(3)]`，三个函数全返回 2，因为共享同一个 `i`。
+  - 解法：用默认参数当场固定，`lambda i=i: i`。
+- 要在内层**修改**外层变量，得声明 `nonlocal`（类比修改全局变量要 `global`）。
+- 对比 C：没有指针，靠 `nonlocal` 表达"改外层那个名字"。
+
+## 9. 装饰器（Decorator）
+- 装饰器就是"**接收一个函数、返回一个新函数**"的函数。`@deco` 写在 def 上方，等价于 `f = deco(f)`。
+- 典型写法：内层 `wrapper(*args, **kwargs)` 包住原函数，前后加逻辑（计时、计数、缓存、鉴权）。
+- **务必用 `functools.wraps`**：否则被装饰后函数的 `__name__`/`__doc__` 会变成 `wrapper`，调试和文档全乱。
+- 对比 JS：类似高阶函数包装；Python 的 `@` 语法糖让它成为一等写法。
+
+## 10. 今日练习（10 题，难度递增）
 1. `calculate_total`：默认参数、返回值、四舍五入。
 2. `build_user_profile`：`**kwargs` 与可选字段。
 3. `safe_average`：空输入返回 `None`，练习 `float | None`。
@@ -51,6 +65,9 @@
 5. `format_report`：`*args` 与 keyword-only 开关。
 6. `add_task`：用 `None` 做安全默认参数，避免可变默认参数和意外修改输入。
 7. `summarize_people`：一个模块内多个函数协作，模拟小型数据处理模块。
+8. `make_counter`：闭包 + `nonlocal` 实现计数器。
+9. `count_calls`：装饰器记录调用次数，`functools.wraps` 保留元数据。
+10. `memoize`：用字典做缓存的装饰器。
 
 完成后进入本目录运行：
 
@@ -58,4 +75,4 @@
 pytest -q
 ```
 
-预计耗时：讲解 25-35 分钟，练习 60-80 分钟。
+预计耗时：讲解 35-45 分钟，练习 75-90 分钟；内容偏多，可分两次学（先 ex1–ex7，再闭包/装饰器 ex8–ex10）。
