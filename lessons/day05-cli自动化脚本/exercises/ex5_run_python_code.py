@@ -3,6 +3,7 @@ def run_python_code(code: str) -> str:
 
     用 subprocess.run，参数用列表形式 [sys.executable, "-c", code]（不要用 shell 字符串），
     并设 capture_output=True, text=True。
+    本题只关心 stdout：不要传 check=True，子进程报错时正常返回（stdout 可能为空）。
     """
     # TODO: 用 subprocess.run 运行
     raise NotImplementedError
