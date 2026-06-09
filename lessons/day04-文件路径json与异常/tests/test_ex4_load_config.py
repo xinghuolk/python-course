@@ -16,5 +16,5 @@ def test_missing_returns_empty(tmp_path):
 def test_invalid_raises(tmp_path):
     p = tmp_path / "bad.json"
     p.write_text("{not json", encoding="utf-8")
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="invalid config"):
         load_config(p)
