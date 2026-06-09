@@ -14,6 +14,8 @@ def test_skips_subdir(tmp_path):
     (tmp_path / "sub").mkdir()
     result = summarize_directory(tmp_path)
     assert result["file_count"] == 1
+    assert result["total_bytes"] == 2          # 子目录不计入字节数
+    assert result["by_suffix"] == {".py": 1}   # 也不计入后缀统计
 
 
 def test_empty(tmp_path):
